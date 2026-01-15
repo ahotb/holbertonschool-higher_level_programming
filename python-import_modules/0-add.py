@@ -6,4 +6,4 @@ b = 2
 
 if __name__ == "__main__":
     result = add(a, b)
-    print(f"{a} + {b} = {result}")
+    print(f""{}".format{a} + {b} = {result}")
