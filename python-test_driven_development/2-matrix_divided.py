@@ -3,7 +3,8 @@
 This module provides a function to divide all elements of a matrix.
 
 The function matrix_divided takes a matrix (list of lists) and a divisor,
-validates the inputs, divides each element by the divisor, rounds to 2 decimal places,
+validates the inputs, divides each element by
+the divisor, rounds to 2 decimal places,
 and returns a new matrix with the results.
 """
 
@@ -16,7 +17,8 @@ def matrix_divided(matrix, div):
         div (int/float): The number to divide by.
 
     Returns:
-        list: A new matrix with all elements divided by div, rounded to 2 decimal places.
+        list: A new matrix with all elements divided by div,
+        rounded to 2 decimal places.
 
     Raises:
         TypeError: If matrix is not a list of lists of numbers,
@@ -46,7 +48,8 @@ def matrix_divided(matrix, div):
         for element in row:
             if not isinstance(element, (int, float)):
                 raise TypeError(
-                    "matrix must be a matrix (list of lists) of integers/floats")
+                    "matrix must be a matrix (list of lists)\
+                          of integers/floats")
             result = round(element / div, 2)
             new_row.append(result)
         new_matrix.append(new_row)
