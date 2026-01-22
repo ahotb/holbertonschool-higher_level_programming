@@ -29,7 +29,7 @@ def text_indentation(text):
         char = text[i]
         if char in ".?:":
             print(char, end="")
-            print("\n500")
+            print("\n")
             i += 1
             while i < len(text) and text[i] in " \t\n":
                 i += 1
