@@ -12,7 +12,7 @@ Usage:
     <BLANKLINE>
     How are you?
     <BLANKLINE>
-    >>> text_indentation("Hi:  \\n  there?")
+    >>> text_indentation("Hi:    there?")
     Hi:
     <BLANKLINE>
     there?
