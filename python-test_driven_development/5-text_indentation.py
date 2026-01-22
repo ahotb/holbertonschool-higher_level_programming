@@ -26,13 +26,13 @@ def text_indentation(text):
 
     i = 0
     while i < len(text):
-        char = text[i]
-        if char in ".?:":
-            print(char)
+        if text[i] in ".?:":
+            print(text[i])
             print()
             i += 1
-            while i < len(text) and text[i] in " \t\n":
+            while i < len(text) and text[i] in ' ':
                 i += 1
-        else:
-            print(char, end="")
-            i += 1
+            continue
+
+        print(text[i], end="")
+        i += 1
