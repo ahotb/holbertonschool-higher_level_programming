@@ -12,11 +12,12 @@ Usage:
     <BLANKLINE>
     How are you?
     <BLANKLINE>
-    >>> text_indentation("Hi:    there?")
-    Hi:
+    >>> text_indentation(" Hello. World? ")
+    Hello.
     <BLANKLINE>
-    there?
+    World?
     <BLANKLINE>
+    >>> text_indentation("")
     >>> text_indentation("One sentence.")
     One sentence.
     <BLANKLINE>
