@@ -30,9 +30,8 @@ def text_indentation(text):
             print(text[i], end="\n\n")
 
             i += 1
-            while i < len(text) and text[i] in ' ':
+            while i < len(text) and text[i] in " \t\n\r\f\v":
                 i += 1
-            continue
-
-        print(text[i], end="")
-        i += 1
+        else:
+            print(text[i], end="")
+            i += 1
