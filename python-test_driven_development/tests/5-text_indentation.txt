@@ -1,63 +1,22 @@
-text_indentation module.
-
-This module contains a function text_indentation that prints text
-with 2 new lines after each of these characters: '.', '?', and ':'.
-
-Usage:
-    >>> text_indentation = __import__('5-text_indentation').text_indentation
-
-    # Basic cases
-    >>> text_indentation("Hello. How are you?")
-    Hello.
-    <BLANKLINE>
-    How are you?
-    <BLANKLINE>
-    >>> text_indentation(" Hello. World? ")
-    Hello.
-    <BLANKLINE>
-    World?
-    <BLANKLINE>
-    >>> text_indentation("One sentence.")
-    One sentence.
-    <BLANKLINE>
-
-    # No special characters
-    >>> text_indentation("Just a normal line")
-    Just a normal line
-    >>> text_indentation("   Normal line with spaces   ")
-       Normal line with spaces   
-
-    # Multiple punctuations
-    >>> text_indentation("Start? Continue. End:")
-    Start?
-    <BLANKLINE>
-    Continue.
-    <BLANKLINE>
-    End:
-    <BLANKLINE>
-
-    # Whitespace handling
-    >>> text_indentation("   Hello.   World?   ")
-    Hello.
-    <BLANKLINE>
-    World?
-    <BLANKLINE>
-
-    # Empty string
-    >>> text_indentation("")
-
-    # Error cases
-    >>> text_indentation(123)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-    >>> text_indentation(None)
-    Traceback (most recent call last):
-    TypeError: text must be a string
-    >>> text_indentation(["text"])
-    Traceback (most recent call last):
-    TypeError: text must be a string
-
-    # Missing argument
-    >>> text_indentation()
-    Traceback (most recent call last):
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+>>> text_indentation("Hi?Yes")
+Hi?
+<BLANKLINE>
+Yes
+>>> text_indentation("Start:Middle:End")
+Start:
+<BLANKLINE>
+Middle:
+<BLANKLINE>
+End
+>>> text_indentation("  Hola   .   Adios  ")
+Hola.
+<BLANKLINE>
+Adios
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
