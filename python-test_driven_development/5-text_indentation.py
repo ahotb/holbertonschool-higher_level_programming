@@ -28,8 +28,8 @@ def text_indentation(text):
     while i < len(text):
         char = text[i]
         if char in ".?:":
-            print(char, end="")
-            print("\n")
+            print(char)
+            print()
             i += 1
             while i < len(text) and text[i] in " \t\n":
                 i += 1
