@@ -17,7 +17,6 @@ Usage:
     <BLANKLINE>
     World?
     <BLANKLINE>
-    >>> text_indentation("")
     >>> text_indentation("One sentence.")
     One sentence.
     <BLANKLINE>
@@ -25,6 +24,8 @@ Usage:
     # No special characters
     >>> text_indentation("Just a normal line")
     Just a normal line
+    >>> text_indentation("   Normal line with spaces   ")
+       Normal line with spaces   
 
     # Multiple punctuations
     >>> text_indentation("Start? Continue. End:")
@@ -44,7 +45,6 @@ Usage:
 
     # Empty string
     >>> text_indentation("")
-    <BLANKLINE>
 
     # Error cases
     >>> text_indentation(123)
