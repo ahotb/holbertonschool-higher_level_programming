@@ -34,13 +34,10 @@ class Square:
 
     def my_print(self):
         """
-                Docstring for my_print
-
-                :param self: Description
-                """
+        Prints the square using the '#' character.
+        """
         if self.__size == 0:
             print()
         if self.__size >= 1:
             for i in range(self.__size):
                 print("#" * self.__size)
-            print()
