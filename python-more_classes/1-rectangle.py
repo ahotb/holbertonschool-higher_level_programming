@@ -30,7 +30,7 @@ class Rectangle:
                 """
         return self.__width
 
-    @width.seteer
+    @width.setter
     def width(self, value):
         """
                 Docstring for width
@@ -53,7 +53,7 @@ class Rectangle:
                 """
         return self.__height
 
-    @height.seteer
+    @height.setter
     def height(self, value):
         """
                 Docstring for width
