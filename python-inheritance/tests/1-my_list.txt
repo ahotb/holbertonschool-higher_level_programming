@@ -1,0 +1,262 @@
+Purpose: Test the print_sorted() method of MyList class that inherits from list
+
+Assumptions:
+- All elements are of type int
+- Method prints list in ascending sorted order without modifying original list
+- No external modules are imported (sorted() is a built-in function and allowed)
+
+==================================================
+Test Case 1: Random integers (basic scenario)
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(1)
+    my_list.append(4)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(5)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [1, 4, 2, 3, 5]
+    [1, 2, 3, 4, 5]
+    [1, 4, 2, 3, 5]
+
+Reason:
+- First print shows original unsorted list
+- Second print shows sorted copy (original remains unchanged)
+- Third print confirms original list was not modified
+
+==================================================
+Test Case 2: Empty list
+==================================================
+Code:
+    my_list = MyList()
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    []
+    []
+    []
+
+Reason:
+- Empty list remains empty after sorting
+- No errors should occur when sorting empty list
+
+==================================================
+Test Case 3: Single element
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(42)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [42]
+    [42]
+    [42]
+
+Reason:
+- Single-element list remains unchanged after sorting
+
+==================================================
+Test Case 4: Negative and positive integers
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(-5)
+    my_list.append(10)
+    my_list.append(-1)
+    my_list.append(0)
+    my_list.append(3)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [-5, 10, -1, 0, 3]
+    [-5, -1, 0, 3, 10]
+    [-5, 10, -1, 0, 3]
+
+Reason:
+- Ascending sort places negative numbers first, then zero, then positives
+
+==================================================
+Test Case 5: Duplicate values
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(3)
+    my_list.append(1)
+    my_list.append(3)
+    my_list.append(2)
+    my_list.append(1)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [3, 1, 3, 2, 1]
+    [1, 1, 2, 3, 3]
+    [3, 1, 3, 2, 1]
+
+Reason:
+- Duplicates are preserved and appear in correct sorted positions
+
+==================================================
+Test Case 6: Already sorted list
+==================================================
+Code:
+    my_list = MyList([1, 2, 3, 4, 5])
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [1, 2, 3, 4, 5]
+    [1, 2, 3, 4, 5]
+    [1, 2, 3, 4, 5]
+
+Reason:
+- Already sorted list remains unchanged after sorting
+
+==================================================
+Test Case 7: Reverse sorted list
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(5)
+    my_list.append(4)
+    my_list.append(3)
+    my_list.append(2)
+    my_list.append(1)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [5, 4, 3, 2, 1]
+    [1, 2, 3, 4, 5]
+    [5, 4, 3, 2, 1]
+
+Reason:
+- Ascending sort reverses the order of a descending list
+
+==================================================
+Test Case 8: Large and diverse integers
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(1000)
+    my_list.append(-999)
+    my_list.append(0)
+    my_list.append(500)
+    my_list.append(-500)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [1000, -999, 0, 500, -500]
+    [-999, -500, 0, 500, 1000]
+    [1000, -999, 0, 500, -500]
+
+Reason:
+- Sorting works correctly with large positive/negative values
+
+==================================================
+Test Case 9: Direct initialization (without append)
+==================================================
+Code:
+    my_list = MyList([7, 2, 9, 1, 5])
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [7, 2, 9, 1, 5]
+    [1, 2, 5, 7, 9]
+    [7, 2, 9, 1, 5]
+
+Reason:
+- Class inherits list behavior, so direct initialization works normally
+
+==================================================
+Test Case 10: Inherited list methods still work
+==================================================
+Code:
+    my_list = MyList()
+    my_list.extend([3, 1, 4])
+    my_list.insert(0, 0)
+    my_list.pop()  # removes 4
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [0, 3, 1]
+    [0, 1, 3]
+    [0, 3, 1]
+
+Reason:
+- All inherited list methods (extend, insert, pop) work normally
+- Added method does not interfere with original list behavior
+
+==================================================
+Test Case 11: Zero and repeated zeros
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(0)
+    my_list.append(0)
+    my_list.append(5)
+    my_list.append(-3)
+    my_list.append(0)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [0, 0, 5, -3, 0]
+    [-3, 0, 0, 0, 5]
+    [0, 0, 5, -3, 0]
+
+Reason:
+- Multiple zeros are handled correctly in sorting
+
+==================================================
+Test Case 12: Very large integers
+==================================================
+Code:
+    my_list = MyList()
+    my_list.append(999999)
+    my_list.append(-999999)
+    my_list.append(0)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+Expected Output:
+    [999999, -999999, 0]
+    [-999999, 0, 999999]
+    [999999, -999999, 0]
+
+Reason:
+- Sorting works correctly with extreme integer values
+
+==================================================
+Important Notes:
+==================================================
+1. The method ONLY PRINTS (does not return a value - returns None implicitly)
+2. Original list MUST remain unchanged after print_sorted() call
+3. Sorting is ALWAYS ascending (smallest to largest)
+4. No exception handling needed since all elements are guaranteed to be int
+5. sorted() is a built-in Python function (NOT an external module) - allowed per requirements
+6. DO NOT use .sort() method as it modifies the original list in-place
+7. The class should NOT override __init__ unless absolutely necessary (inherit from list directly)
