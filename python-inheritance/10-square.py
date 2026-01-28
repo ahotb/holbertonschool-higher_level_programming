@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Docstring for python-inheritance.8-rectangle.py
+Docstring for python-inheritance.
 """
 
 Rectangle = __import__('9-rectangle').Rectangle
