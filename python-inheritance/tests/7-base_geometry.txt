@@ -1,0 +1,77 @@
+>>> # Test Case 1: area() method raises correct exception
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> # Test Case 2: Valid positive integers pass validation
+>>> bg.integer_validator("width", 5)
+>>> bg.integer_validator("height", 100)
+>>> bg.integer_validator("radius", 1)
+
+>>> # Test Case 3: Non-integer types raise TypeError with correct message
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+>>> try:
+...     bg.integer_validator("size", 3.14)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] size must be an integer
+>>> try:
+...     bg.integer_validator("count", None)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] count must be an integer
+
+>>> # Test Case 4: CRITICAL - Boolean values MUST be rejected (edge case)
+>>> try:
+...     bg.integer_validator("flag", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] flag must be an integer
+>>> try:
+...     bg.integer_validator("active", False)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] active must be an integer
+
+>>> # Test Case 5: Values <= 0 raise ValueError with correct message
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+>>> try:
+...     bg.integer_validator("distance", -5)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
+>>> try:
+...     bg.integer_validator("depth", -100)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] depth must be greater than 0
+
+>>> # Test Case 6: Instantiation without arguments works
+>>> bg2 = BaseGeometry()
+>>> bg2.integer_validator("x", 10)
+
+>>> # Test Case 7: Validator does NOT store attributes in instance
+>>> hasattr(bg, 'name')
+False
+>>> hasattr(bg, 'value')
+False
+>>> hasattr(bg, 'x')
+False
+
+>>> # Test Case 8: Message contains actual parameter name (not literal "<name>")
+>>> try:
+...     bg.integer_validator("my_int", "invalid")
+... except TypeError as e:
+...     print(str(e))
+my_int must be an integer
