@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 Docstring for python-inheritance.8-rectangle.py
