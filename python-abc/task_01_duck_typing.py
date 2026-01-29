@@ -73,5 +73,5 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    print("Area: {}".format(Shape.area()))
-    print("Perimeter: {}".format(Shape.perimeter()))
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
