@@ -39,7 +39,7 @@ class Rectangle(Shape):
         if self.width == 0 or self.height == 0:
             return 0
         else:
-            return 2 * (self.width + self.height)
+            return (self.width + self.height) * 2
 
 
 def shape_info(shape):
