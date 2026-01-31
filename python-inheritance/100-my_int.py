@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Docstring for python-inheritance.100-my_int
+"""
+
 
 class MyInt(int):
 
