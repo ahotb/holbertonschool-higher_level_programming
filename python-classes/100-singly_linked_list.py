@@ -34,7 +34,13 @@ class Node:
         self.__next_node = value
 
 
+"""	Docstring for SinglyLinkedList"""
+
+
 class SinglyLinkedList:
+    """
+    Docstring for SinglyLinkedList
+   """
 
     def __init__(self):
         self.__head = None
