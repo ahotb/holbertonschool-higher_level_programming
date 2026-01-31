@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+"""
+Docstring for python-classes.100-singly_linked_list
+"""
+
 
 class Node:
+    """
+        Docstring for Node
+        """
+
     def __init__(self, data, next_node=None):
         self.__data = data
         self.__next_node = next_node
