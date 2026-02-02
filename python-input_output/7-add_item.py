@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Docstring for python-input_output.7-add_item
+"""
 import sys
 
 from save_to_json_file import save_to_json_file
