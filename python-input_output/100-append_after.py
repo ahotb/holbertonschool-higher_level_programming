@@ -2,7 +2,6 @@
 """
 Docstring for python-input_output.100-append_after
 """
-import json
 
 
 def append_after(filename="", search_string="", new_string=""):
