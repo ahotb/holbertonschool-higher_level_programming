@@ -36,7 +36,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                 "description": "A simple API built with http.server"
             }
             response_data = json.dumps(info_data).encode()
-            self.wfile.write(b"response_data")
+            self.wfile.write(response_data)
 
         else:
             self.send_response(404)
