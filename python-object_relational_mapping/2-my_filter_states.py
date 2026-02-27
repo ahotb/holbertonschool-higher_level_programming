@@ -2,7 +2,7 @@
 """List all states where name matches the argument"""
 
 import sys
-import mysql.connector
+import MySQLdb
 
 
 if __name__ == "__main__":
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    db = mysql.connector.connect(
+    db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
