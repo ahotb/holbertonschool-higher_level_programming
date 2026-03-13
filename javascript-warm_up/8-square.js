@@ -10,6 +10,6 @@ if (isNaN(size)) {
     for (let j = 0; j < size; j++) {
       row += 'X';
     }
-    console.log('X'.repeat(size));
+    console.log(row);
   }
 }
